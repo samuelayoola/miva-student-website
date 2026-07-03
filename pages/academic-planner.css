@@ -1,0 +1,426 @@
+/*==========================================
+GOOGLE FONT
+==========================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap");
+
+/*==========================================
+RESET
+==========================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffe4d1;
+  color: #222;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/*==========================================
+VARIABLES
+==========================================*/
+
+:root {
+  --primary: #ff7d21;
+  --secondary: #ffc107;
+  --dark: #222;
+  --gray: #666;
+  --white: #fff;
+
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+
+  --radius: 20px;
+
+  --transition: 0.35s ease;
+}
+
+/*==========================================
+HEADER
+==========================================*/
+
+.header {
+  position: sticky;
+
+  top: 0;
+
+  background: white;
+
+  z-index: 1000;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+  width: min(1200px, 90%);
+
+  margin: auto;
+
+  height: 90px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.logo {
+  font-family: "Poppins";
+
+  font-size: 1.7rem;
+
+  font-weight: 700;
+
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+
+  gap: 40px;
+}
+
+.nav-links a {
+  position: relative;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -8px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: var(--primary);
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links .active::after {
+  width: 100%;
+}
+
+.btn {
+  background: var(--primary);
+
+  color: white;
+
+  padding: 14px 28px;
+
+  border-radius: 999px;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+/*==========================================
+PLANNER
+==========================================*/
+
+.planner {
+  padding: 80px 0;
+}
+
+.container {
+  width: min(800px, 90%);
+
+  margin: auto;
+}
+
+.planner h1 {
+  text-align: center;
+
+  font-family: "Poppins";
+
+  font-size: 3rem;
+
+  color: var(--primary);
+
+  margin-bottom: 15px;
+}
+
+.planner p {
+  text-align: center;
+
+  color: var(--gray);
+
+  margin-bottom: 40px;
+}
+
+/*==========================================
+INPUT
+==========================================*/
+
+.task-input {
+  display: flex;
+
+  gap: 15px;
+
+  margin-bottom: 30px;
+}
+
+.task-input input {
+  flex: 1;
+
+  padding: 16px 20px;
+
+  border: none;
+
+  border-radius: var(--radius);
+
+  font-size: 1rem;
+
+  box-shadow: var(--shadow);
+}
+
+.task-input button {
+  padding: 16px 28px;
+
+  border: none;
+
+  background: var(--primary);
+
+  color: white;
+
+  border-radius: var(--radius);
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  font-weight: 600;
+}
+
+.task-input button:hover {
+  background: #e86e18;
+}
+
+/*==========================================
+TASK COUNT
+==========================================*/
+
+.task-info {
+  margin-bottom: 20px;
+}
+
+.task-info h3 {
+  font-family: "Poppins";
+
+  color: var(--dark);
+}
+
+/*==========================================
+TASK LIST
+==========================================*/
+
+#taskList {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+/*==========================================
+TASK ITEM
+==========================================*/
+
+.task {
+  background: white;
+
+  padding: 18px 22px;
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  animation: fadeUp 0.5s ease;
+}
+
+.task span {
+  flex: 1;
+
+  margin-left: 15px;
+}
+
+/*==========================================
+COMPLETED TASK
+==========================================*/
+
+.completed span {
+  text-decoration: line-through;
+
+  color: #999;
+}
+
+/*==========================================
+BUTTONS
+==========================================*/
+
+.task-buttons {
+  display: flex;
+
+  gap: 10px;
+}
+
+.complete-btn {
+  background: var(--secondary);
+
+  border: none;
+
+  color: #222;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.complete-btn:hover {
+  background: #ffb300;
+}
+
+.delete-btn {
+  background: #ef4444;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/*==========================================
+EMPTY STATE
+==========================================*/
+
+.empty {
+  background: white;
+
+  padding: 30px;
+
+  text-align: center;
+
+  border-radius: var(--radius);
+
+  color: var(--gray);
+
+  box-shadow: var(--shadow);
+}
+
+/*==========================================
+ANIMATION
+==========================================*/
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  .planner h1 {
+    font-size: 2.4rem;
+  }
+
+  .task-input {
+    flex-direction: column;
+  }
+
+  .task-input button {
+    width: 100%;
+  }
+
+  .task {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .task-buttons {
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 500px) {
+  .planner {
+    padding: 60px 0;
+  }
+
+  .planner h1 {
+    font-size: 2rem;
+  }
+}
