@@ -169,6 +169,7 @@ p {
   width: min(1200px, 90%);
 
   margin: auto;
+  position: relative;
 
   display: flex;
 
@@ -690,39 +691,33 @@ footer {
 =====================================================*/
 
 @media (max-width: 992px) {
-  .hero{
+  .hero {
+    display: flex;
 
-    display:flex;
+    flex-direction: column;
 
-    flex-direction:column;
+    align-items: center;
 
-    align-items:center;
+    text-align: center;
 
-    text-align:center;
+    padding-top: 40px;
+  }
 
-    padding-top:40px;
+  .hero-image {
+    order: -1;
 
-}
+    display: flex;
 
-.hero-image{
+    justify-content: center;
 
-    order:-1;
+    align-items: center;
 
-    display:flex;
+    width: 300%;
 
-    justify-content:center;
+    height: 600;
 
-    align-items:center;
-
-    width:100%;
-
-    height:auto;
-
-    margin:0 auto 40px;
-
-}
-
-
+    margin: 0 auto 40px;
+  }
   .stats {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -750,31 +745,49 @@ footer {
   }
 
   .nav-links {
-    position: fixed;
+    position: absolute;
 
-    top: 80px;
+    top: 100%;
 
-    right: -100%;
+    left: 50%;
 
-    width: 270px;
+    transform: translateX(-50%) scaleY(0);
 
-    height: 100vh;
+    transform-origin: top;
 
-    background: white;
+    width: 92%;
+
+    background: #fff;
+
+    display: flex;
 
     flex-direction: column;
 
-    padding: 40px;
+    align-items: center;
 
-    gap: 30px;
+    gap: 40px;
 
-    box-shadow: -10px 0 25px rgba(0, 0, 0, 0.08);
+    padding: 40px 0;
 
-    transition: 0.4s;
+    border-radius: 0 0 20px 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: all 0.35s ease;
+
+    z-index: 999;
   }
 
   .nav-links.active {
-    right: 0;
+    transform: translateX(-50%) scaleY(1);
+
+    opacity: 1;
+
+    visibility: visible;
   }
 
   .hero h1 {
@@ -804,19 +817,41 @@ footer {
   }
 
   .hero-image {
-    height: 380px;
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 auto 40px;
+  }
+  .card {
+    position: relative;
+
+    width: 220px;
+
+    margin: 0 auto;
+
+    left: auto;
+
+    right: auto;
+
+    top: auto;
+
+    bottom: auto;
+
+    transform: none;
   }
 
-  .card {
-    position:relative;
-
-    width:220px;
-
-    margin:auto;
-
+  .one,
+  .two {
+    display: none;
   }
 }
-
 @media (max-width: 480px) {
   .hero {
     padding-top: 20px;
@@ -903,17 +938,4 @@ RESPONSIVE
   .video-section h2 {
     font-size: 2rem;
   }
-}
-.hero-content{
-
-    width:100%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    text-align:center;
-
 }
