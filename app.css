@@ -715,15 +715,7 @@ footer {
     margin-top:0;
 
 }
-  .hero p {
-    margin: auto auto 35px;
-  }
 
-  .hero-image {
-    height: 450px;
-
-    margin-top: 40px;
-  }
 
   .stats {
     grid-template-columns: repeat(2, 1fr);
